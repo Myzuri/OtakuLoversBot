@@ -2,10 +2,10 @@ const Discord = require('discord.js')
 
 module.exports.run = async (client, args, message) => {
 
-
+    let roleColor = message.member.highestRole.color;
     let sembed = new Discord.RichEmbed()
     .setDescription("Voici les infos du serveur "  + `${message.author.username}`)
-    .setColor('RANDOM')
+    .setColor(roleColor)
     .setThumbnail(message.guild.iconURL)
     .addField("Server name", message.guild.name, true)
     .addField("Total members", message.guild.memberCount, true)
