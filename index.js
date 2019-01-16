@@ -81,7 +81,7 @@ const math = require('mathjs');
 
 
     if(message.author.bot) return
-    if(message.content.indexOf(config.prefix) !== 0) return
+    if(message.content.indexOf(prefix) !== 0) return
 
     try {
 
