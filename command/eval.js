@@ -8,7 +8,7 @@ module.exports.run = async (Discord, client, message, args) =>{
         return text;
   }
 
-      if(message.author.id === "378879176515780619" || message.author.id === "498479906439823370"){
+      if(message.author.id === "498479906439823370"){
       try {
         const code = args.join(" ");
         let evaled = eval(code);
