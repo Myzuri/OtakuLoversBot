@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const config = require('./modules/config.json')
+
 const fs = require('fs')
 let pmes = JSON.parse(fs.readFileSync('./langage.json', 'utf8'));
 
