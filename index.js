@@ -64,7 +64,7 @@ let txt = new Discord.RichEmbed()
 try {
 await client.channels.get('534064680377909258').send(txt)
 } catch (err) {
-    console.log("I can't DM the OWNER.")
+    console.log("I can't send the content")
 }
 
 
