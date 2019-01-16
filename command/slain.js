@@ -2,12 +2,13 @@ module.exports.run = async (Discord, client, message, args) =>  {
 
 	var user = message.mentions.users.first();
 	var author;
+	let roleColor = message.member.highestRole.color;
 
 	if(user){
 		var author = user;
 
 		let embed = new Discord.RichEmbed()
-		.setColor('RANDOM')
+		.setColor(roleColor)
 		.setDescription(`${message.author.username} a tué ${author.username}`)
 		.setImage(randompic())
 		return message.channel.send(embed)
