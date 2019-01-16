@@ -10,7 +10,6 @@ module.exports.run = async (client, args, message) => {
       .setThumbnail(user.displayAvatarURL)
       .addField("Etat", user.presence.status, true)
       .addField("ID", user.id, true)
-      .addField('Role', user.roles.map(u=>u.name))
       .setDescription('[full image]('+user.avatarURL+')')
       //.addField("Joue a ", "\`" + user.presence.game.name + "\`")
       .setFooter("Account created at : ")
