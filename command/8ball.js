@@ -1,5 +1,5 @@
-const math = require('mathjs')
-let config = require('../modules/config.json')
+
+
 module.exports.run = async (Discord, client, message, args) => {
 
 
