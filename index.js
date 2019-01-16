@@ -73,7 +73,7 @@ await client.channels.get('534064680377909258').send(txt)
 
 
 client.on('message', message => {
-const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
 const username = message.author.username;
 const math = require('mathjs');
