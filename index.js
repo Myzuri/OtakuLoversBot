@@ -30,7 +30,7 @@ client.on("guildCreate", guild => {
   });
 
 
-client.login(config.token);
+client.login(process.env.TOKEN);
 
 client.on('message', msg => {
     if(msg.content === '<@'+client.user.id+'>') return msg.channel.send( `${pmes.prefix}\`${config.prefix}\`` )
