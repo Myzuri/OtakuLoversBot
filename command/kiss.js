@@ -4,7 +4,7 @@ exports.run = async (Discord, client, message, args) => {
     let Hugser = message.mentions.users.first();
 
     let hugger = message.author;
-
+    let roleColor = message.member.highestRole.color;
     let emote = client.emojis.find(e=>e.name === 'TohsakaFacepalm')
 
     if(!Hugser) return message.channel.send(`Trying to kiss what ${emote}`)
@@ -17,5 +17,6 @@ exports.run = async (Discord, client, message, args) => {
     let embed = new Discord.RichEmbed()
     .setDescription(`**${hugger.username}** gives a kiss to **${Hugser.username}**, how cute they are !`)
     .setImage(body.url)
+    .setColor(roleColor)
     message.channel.send(embed)
 }
