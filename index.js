@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const fs = require('fs')
-let pmes = JSON.parse(fs.readFileSync('./langage.json', 'utf8'));
+
+let prefix = ';';
 
 
 console.table('connexion.........')
@@ -11,7 +11,7 @@ console.table('connexion.........')
 
 client.on('ready', () => {
     setInterval(function() {
-    let allgame = ['My Master still lazy to dev UwU', `${config.prefix}help`, 'OwO', `${client.users.size} users <3`]
+    let allgame = ['My Master still lazy to dev UwU', `${prefix}help`, 'OwO', `${client.users.size} users <3`]
     let gameon = allgame[Math.floor(Math.random()*allgame.length)]
     client.user.setGame(gameon, 'https://www.twitch.tv/monstercat');
 }, 40000)
@@ -33,7 +33,7 @@ client.on("guildCreate", guild => {
 client.login(process.env.TOKEN);
 
 client.on('message', msg => {
-    if(msg.content === '<@'+client.user.id+'>') return msg.channel.send( `${pmes.prefix}\`${config.prefix}\`` )
+    if(msg.content === '<@'+client.user.id+'>') return msg.channel.send( `My prefix is: \`${prefix}\`` )
 })
 
 
