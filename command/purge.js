@@ -1,13 +1,13 @@
 module.exports.run = async (Discord, client, message, args) =>  {
 
   var msglength = args[0];
-
+  let roleColor = message.member.highestRole.color;
 //  if(!message.member.hasPermissions('MANAGE_MESSAGES')) return message.channel.sendMessage("You don't have enough perms")
 
 
 	if (message.channel.type == 'text') {
     var embed = new Discord.RichEmbed()
-      .setColor('RANDOM')
+      .setColor(roleColor)
 			.setAuthor(message.author.username, message.author.displayAvatarURL)
 			.addField('Message delete !', 'Amount of deleted messages: `' +msglength+'`')
       .setThumbnail(message.author.displayAvatarURL)
