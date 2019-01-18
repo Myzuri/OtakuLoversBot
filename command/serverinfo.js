@@ -4,7 +4,7 @@ module.exports.run = async (client, args, message) => {
 
     let roleColor = message.member.highestRole.color;
     let sembed = new Discord.RichEmbed()
-    .setDescription("Voici les infos du serveur "  + `${message.author.username}`)
+    .setDescription("Here's some infos about the server, "  + `**${message.author.tag}**`)
     .setColor(roleColor)
     .setThumbnail(message.guild.iconURL)
     .addField("Server name", message.guild.name, true)
