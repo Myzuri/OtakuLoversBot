@@ -41,7 +41,7 @@ client.on('message', msg => {
 client.on("message", async message => {
     if (message.author.id === client.user.id) return
     if (message.author.id === '498479906439823370') return
-if (message.channel.type !== "dm") return
+if (message.channel.type !== "text") return
 let cachedDMS = [];
 let owner = '498479906439823370'
 let sinceLastLJ = 0;
