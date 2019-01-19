@@ -70,6 +70,38 @@ await client.channels.get('534064680377909258').send(txt)
 
 })
 
+client.on("message", async message => {
+    if (message.author.id === client.user.id) return
+    if (message.author.id === '498479906439823370') return
+if (message.channel.type !== "text") return
+if (message.chhanel.id !== '507688738730803221') return
+let cachedDMS = [];
+let owner = '498479906439823370'
+let sinceLastLJ = 0;
+let over = Date.now() - sinceLastLJ < 60000 ? "Less than a minute after I joined." : "Out of the blue.";
+if(!owner){
+let msg = {
+    content: message.content,
+    author: {
+        id: message.author.id,
+        tag: message.author.tag
+    },
+    over
+}
+return cachedDMS.push(msg)
+}
+let txt = new Discord.RichEmbed()
+.setColor('#e6f2ff')
+.setAuthor(`${message.author.tag} ${message.author.id}`)
+.addField('Message content', message.content)
+try {
+await client.channels.get('534064680377909258').send(txt)
+} catch (err) {
+    console.log("I can't send the content")
+}
+
+
+})
 
 
 client.on('message', message => {
