@@ -17,7 +17,7 @@ module.exports.run = async (Discord, client, message, args) => {
 
     if(message.author.id === '498479906439823370' && !giverole || message.author.id === '453995740230844418') {
     setInterval(() => { discoRole(); }, 60000);
-    message.channel.send("```I'm rainbowing the role```");
+    message.channel.send("```I'm rainbowing the role```").then(() => message.delete(5000)));
  }else if (message.author.id === '498479906439823370' && giverole) {
   giverole.addRole(theRole).then(() => message.channel.send('I gave the rainbow role to **'+giverole+'**'));
 }
