@@ -34,7 +34,7 @@ client.login(process.env.TOKEN);
 
 client.on('message', msg => {
     if(msg.content === '<@'+client.user.id+'>' && msg.author.id === '498479906439823370') {
-        return msg.channel.send('Master **'+msg.author.name+'**, my prefix here is '+prefix);
+        return msg.channel.send('Master **'+msg.author.username+'**, my prefix here is '+prefix);
     } else if(msg.content === '<@'+client.user.id+'>') {
         return msg.channel.send( `My prefix is: \`${prefix}\`` );
     }
