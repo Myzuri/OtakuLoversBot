@@ -22,12 +22,20 @@ exports.run = async (Discord, client, message, args) => {
     
     if(!Hugser && !me) return message.channel.send(`Trying to kiss what ${emote}`)
 
-    if(Hugser.id === '469099157269774337') {
+    if (Hugser.id === client.user.id && message.author.id === '498479906439823370') {
+        const {body} = await superagent
+        .get(`https://nekos.life/api/v2/img/kiss`);
+    
+        let embed = new Discord.RichEmbed()
+        .setDescription(`Master give me a kiss !!!`)
+        .setImage(body.url)
+        message.channel.send(embed)
+    } else if(Hugser.id === '469099157269774337') {
         return message.channel.send('Trying to do what')
     } 
 
     if(Hugser === message.author) return message.channel.send('Lemme laugh to see you kiss yourself ')
-    if(Hugser !== client.user.id) {
+    if(Hugser === client.user.id) {
     const {body} = await superagent
     .get(`https://nekos.life/api/v2/img/kiss`);
 
