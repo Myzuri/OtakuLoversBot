@@ -30,7 +30,7 @@ exports.run = async (Discord, client, message, args) => {
         .setDescription(`Master give me a kiss !!!`)
         .setImage(body.url)
         message.channel.send(embed)
-    } else if(Hugser.id === '469099157269774337') {
+    } else if(Hugser.id === client.user.id) {
         return message.channel.send('Trying to do what')
     } 
 
