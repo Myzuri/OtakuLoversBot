@@ -7,7 +7,9 @@ let queue = {};
 
 
 console.log('connexion.........')
+
 const commands = {
+
     'play': (msg) => {
         if (queue[msg.guild.id] === undefined) return msg.channel.sendMessage(`Add some songs to the queue first with ${prefix}add`);
         if (!msg.guild.voiceConnection) return commands.join(msg).then(() => commands.play(msg));
@@ -78,11 +80,6 @@ const commands = {
         let tosend = [];
         queue[msg.guild.id].songs.forEach((song, i) => { tosend.push(`${i+1}. ${song.title} - Requested by: ${song.requester}`);});
         msg.channel.sendMessage(`__**${msg.guild.name}'s Music Queue:**__ Currently **${tosend.length}** songs queued ${(tosend.length > 15 ? '*[Only next 15 shown]*' : '')}\n\`\`\`${tosend.slice(0,15).join('\n')}\`\`\``);
-    },
-    'leave': (msg) => {
-        const voiceChannel = msg.member.voiceChannel;
-        if (!voiceChannel) return msg.reply('I\'m not connected in any voice channel :think:');
-        voiceChannel.leave().then(m => m.channel.send('successfull leaving !'))
     },
     
 };
