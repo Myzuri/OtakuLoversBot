@@ -4,7 +4,7 @@ module.exports.run = async (Discord, client, message, args) => {
 
 
 	let ballq = args.join(' ');
-	if(!ballq) return message.channel.sendCode('js', `${config.prefix}8ball [your question]`)
+	if(!ballq) return message.channel.sendCode('js', `${prefix}8ball [your question]`)
 		return message.channel.send(ballRes())
 
 
