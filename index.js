@@ -20,10 +20,10 @@ const commands = {
         console.log(queue);
         (function play(song) {
             console.log(song);
-            if (song === undefined) return msg.channel.sendMessage('Queue is empty').then(() => {
-                queue[msg.guild.id].playing = false;
-                msg.member.voiceChannel.leave();
-            });
+            //if (song === undefined) return msg.channel.sendMessage('Queue is empty').then(() => {
+              //  queue[msg.guild.id].playing = false;
+                //msg.member.voiceChannel.leave();
+            //});
             msg.channel.sendMessage(`Playing: **${song.title}** as requested by: **${song.requester}**`);
             dispatcher = msg.guild.voiceConnection.playStream(yt(song.url, { audioonly: true }));
             let collector = msg.channel.createCollector(m => m);
