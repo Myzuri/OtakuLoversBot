@@ -21,6 +21,7 @@
     "opusscript": "0.0.6",
     "os-utils": "0.0.14",
     "random-puppy": "^1.1.0",
+    "readable-stream": "^3.3.0",
     "rebuild": "^0.1.2",
     "redis-session": "^0.1.0",
     "snekfetch": "^4.0.4",
