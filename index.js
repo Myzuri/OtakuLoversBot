@@ -18,7 +18,7 @@ const commands = {
         queue[msg.guild.id].playing = true;
 
         console.log(queue);
-        (function playing(song) {
+        (function play(song) {
             console.log(song);
             if (song === undefined) return msg.channel.sendMessage('Queue is empty').then(() => {
                 queue[msg.guild.id].playing = false;
