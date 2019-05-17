@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const yt = require('ytdl-core');
 
 let prefix = ';';
-let queue = new Object();
+let queue = [];
 
 
 console.log('connexion.........')
