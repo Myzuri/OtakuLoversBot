@@ -11,11 +11,24 @@ module.exports.run = async (client, args, message) => {
       .addField("Etat", user.presence.status, true)
       .addField("ID", user.id, true)
       .setDescription('[full image]('+user.avatarURL+')')
-      //.addField("Joue a ", "\`" + user.presence.game.name + "\`")
+      .addField("Game", "\`" + user.presence.game.name + "\`")
       .setFooter("Account created at : ")
       .setTimestamp(user.createdAt)
-      return message.channel.send(embed)
+      return message.channel.send(embed);
+      
+            function giveMeAStatus(basic) {
+            if(basic === 'dnd') return 'Do not disturb';
+            if(basic === 'offline') return 'Offline';
+            if(basic === 'online') return 'Online';
+            if(basic === 'idle') return 'Idle';
+      }
 
+      function gamePlaying(gameOn) {
+            if(gameOn === null) return 'Isn\'t playing a game';
+            else {
+                  return user.presence.game.name;
+            }
+      }
 }
 
 
