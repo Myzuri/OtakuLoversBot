@@ -2,8 +2,8 @@ module.exports.run = async (Discord, client, message, args) =>  {
 
   var msglength = args[0];
   let roleColor = message.member.highestRole.color;
-  if(!message.member.hasPermissions('MANAGE_MESSAGES') and message.author != "498479906439823370") return message.channel.sendMessage("You don't have enough perms")
-  if(msglength == NaN) return message.channel.sendMessage("Please enter a **number**")
+  if(!message.member.hasPermissions('MANAGE_MESSAGES') and message.author.id != "498479906439823370") return message.channel.sendMessage("You don't have enough perms")
+
 
 
 	if (message.channel.type == 'text') {
