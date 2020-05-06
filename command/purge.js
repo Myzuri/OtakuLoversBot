@@ -8,9 +8,9 @@ module.exports.run = async (Discord, client, message, args) =>  {
 
 	if (message.channel.type == 'text') {
     var embed = new Discord.RichEmbed()
-      .setColor(roleColor)
-      .setAuthor(message.author.username, message.author.displayAvatarURL)
-      .addField('Message delete !', 'Amount of deleted messages: `' +msglength+'`')
+    		.setColor(roleColor)
+      		.setAuthor(message.author.username, message.author.displayAvatarURL)
+     		.addField('Message delete !', 'Amount of deleted messages: `' +msglength+'`')
       .setThumbnail(message.author.displayAvatarURL)
       
    let msgpurged = await message.channel.bulkDelete(msglength).then(() => {
