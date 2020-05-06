@@ -12,7 +12,7 @@ module.exports.run = async (Discord, client, message, args) =>  {
 			.addField('Message delete !', 'Amount of deleted messages: `' +msglength+'`')
       .setThumbnail(message.author.displayAvatarURL)
       
-   let msgpurged = await message.channel.bulkDelete(msglength).then(() => {
+   let msgpurged = await message.channel.bulkDelete(msglength+1).then(() => {
       message.channel.send(embed).then(msg => msg.delete(10000));
 			
           })
