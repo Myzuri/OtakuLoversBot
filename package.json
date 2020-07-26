@@ -12,7 +12,7 @@
   "author": "Yu",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^2.5.0",
+    "canvas": "^1.6.9",
     "discord.js": "^11.4.2",
     "express": "^4.16.4",
     "ffmpeg-binaries": "^4.0.0",
